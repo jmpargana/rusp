@@ -1,0 +1,7 @@
+EOL = { "\r\n" }
+number = { ASCII_DIGIT+ }
+int = { ":" ~ "-"? ~ number ~ EOL }
+text = { ASCII_ALPHANUMERIC+ }
+string = { "$" ~ number ~ EOL ~ text ~ EOL }
+array = { "*" ~ number ~ EOL ~ (array | string | int)* }
+
